@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {background-image:url('static/images/bg.jpg');background-size:cover;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.signup {
+  width: auto;
+  padding: 10px 18px;
+  background-color: orange;
+}
+
+.forgotpassword {
+  width: auto;
+  padding: 10px 18px;
+  background-color: red;
+}
+
+.imgcontainer {
+  
+  text-align: center; 
+  margin-left:auto;
+  margin-right:auto;
+  height:245px;
+  padding:10px;
+
+}
+
+img.avatar {
+  width: 15%;
+  height:70%;
+  border-radius: 5%;
+}
+
+
+.container1{
+width:20%;
+margin-left:auto;
+margin-right:auto;
+padding:10px 80px;
+}
+
+.container {
+  margin-left:auto;
+  margin-right:auto;
+  width:20%;
+  height:80%;
+   
+  padding: 16px;
+}
+
+
+span{
+
+white-space:pre-wrap;
+
+
+</style>
+</head>
+<body>
+
+
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="static/images/images1.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit">Login</button>
+    <label>
+
+  </div>
+
+  <div class="container1">
+    <button type="button" class="signup">Signup</button>
+    <span>&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="forgotpassword">Forgot Password</button></span>
+  </div>
+</form>
+
+</body>
+</html>
