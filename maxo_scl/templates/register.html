@@ -12,7 +12,7 @@
        body{
           margin:0;
           padding:0;
-          background:url("bg.png");
+          background:url("static/images/bg.jpg");
           background-size: cover;
           font-family: sans-serif;
            }
@@ -21,10 +21,10 @@
           
           }
       .loginbox{  width: 320px;
-          height: 325px;
+          height: 395px;
           background: #0d5658;
           color: #fff;
-          top:20%;
+          top:15%;
           left:36%;
           position:absolute;
           transform: translate{-50%,-50%}
@@ -96,18 +96,20 @@
   <body>
     <img class="log">
     <div class="loginbox">
-    <img src="avatar1.png" class="avatar">
+    <img src="static/images/avatar1.png" class="avatar">
     <h1>Register Here</h1>
     
     <form>
     <p> Email</p>
-    <input type="text" name="" placeholder="Enter Email">
+    <input type="text" name="email" placeholder="Enter Email">
+    <p> Username</p>
+    <input type="text" name="username" placeholder="Enter Username">
     <p> Password</p>
-    <input type="password" name="" placeholder="Enter Password"><br>
+    <input type="password" name="password" placeholder="Enter Password"><br>
     <p> Confirm Password</p>
-    <input type="password" name="" placeholder="Enter Password"><br>
-    <input type="submit" name="" value="Register">
-    <a href="#">Already have an acoount?Login</a>
+    <input type="password" name="cpassword" placeholder="Enter Password"><br>
+    <input type="submit" name="submit" value="Register">
+    <a href="/">Already have an acoount?Login</a>
     </form>
     </div>
     <script src="js/jquery-2.1.4.min.js"></script>
