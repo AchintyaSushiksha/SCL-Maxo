@@ -12,19 +12,34 @@ Digital Education Web App
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
 Our Digital Education Web app is a app which provides resources to the students( of age group 13-16) in the fields like art, craft and to learn different languages. 
 Gives regular updates on the field the students interested in.
 It also includes a query box which helps student to clarify their doubt.
+User can view thier progress in user profile page.
 
 ## Screenshots
 ![Example screenshot](./static/img/wel2.jpg)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Editor- Jupyter notebook
+* Programming language- Python
+* Framework-Flask
+* Module- Pymysql
+* Hosting panel-helihost(hosted database here)
+* Frontend-HTML,CSS
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+Change directory:
+```
+cd path
+```
+Install flask and pymysql
+```
+pip install flask
+pip install PyMySQL
+```
+Run code
+```
+flask run
+```
 
