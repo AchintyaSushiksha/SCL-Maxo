@@ -25,7 +25,6 @@ User can view thier progress in user profile page.
 * Programming language- Python
 * Framework-Flask
 * Module- Pymysql
-* Hosting panel-helihost(hosted database here)
 * Frontend-HTML,CSS
 
 ## Setup
