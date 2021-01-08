@@ -16,7 +16,7 @@ def login():
             return redirect(url_for('login'))
         try:
 
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="888000++vVvV",
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678",
                                  autocommit=True)
             cur = db.cursor()
 
@@ -101,7 +101,7 @@ def register():
             return redirect(url_for('register'))  # Return to same page if password doesnt match.
 
         try:
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="888000++vVvV",
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678",
                                  autocommit=True)
             cur = db.cursor()
 
@@ -170,7 +170,7 @@ def nextpage():
             if button_name != "":
                 try:
                     db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya",
-                                         password="888000++vVvV", autocommit=True)
+                                         password="12345678", autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -214,7 +214,7 @@ def nextpage():
             if button_name != "":
                 try:
                     db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya",
-                                         password="888000++vVvV", autocommit=True)
+                                         password="12345678", autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -258,7 +258,7 @@ def nextpage():
             if button_name != "":
                 try:
                     db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya",
-                                         password="888000++vVvV", autocommit=True)
+                                         password="12345678", autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -319,7 +319,7 @@ def profile1():
         changed_email = request.form['email1']
         #         if changed_username!='' or changed_email!='':
         try:
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="888000++vVvV",
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678",
                                  autocommit=True)
             cur = db.cursor()
             ab = "use achintya_maxo_scl"
