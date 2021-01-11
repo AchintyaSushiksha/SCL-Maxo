@@ -22,7 +22,7 @@ User can view thier progress in user profile page.
 ![main page](./maxo_scl/static/images/snapshots/mainpage_whatsapp.PNG "Main page")
 ![language page](./maxo_scl/static/images/snapshots/language_achintya.PNG "Language page")
 ![profile](./maxo_scl/static/images/snapshots/profile_achintya.PNG "User Profile")
-![About us](./maxo_scl/static/images/snapshots/about_achintya.PNG "About")
+
 
 ## Technologies
 * Editor- Jupyter notebook
