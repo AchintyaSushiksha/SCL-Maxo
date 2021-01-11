@@ -18,8 +18,8 @@ It also includes a query box which helps student to clarify their doubt.
 User can view thier progress in user profile page.
 
 ## Screenshots
-![home page](./maxo_scl/static/images/snapshots/home_achintya.PNG)
-
+![home page](./maxo_scl/static/images/snapshots/home_achintya.PNG "Home page")
+![main page](./maxo_scl/static/images/snapshots/mainpage_whatsapp.PNG "Main page")
 ## Technologies
 * Editor- Jupyter notebook
 * Programming language- Python
