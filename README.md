@@ -47,7 +47,7 @@ Run code
 flask run
 ```
 ## Features
-* Creating account/login
-* Learning New Language, improving English, art.
-* User profile where user can view his/her progress in the field they have choosen.
+* Creating account/login.
+* Learning New Language, improving English, Art.
+* User profile.
 
