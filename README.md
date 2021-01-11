@@ -18,7 +18,7 @@ It also includes a query box which helps student to clarify their doubt.
 User can view thier progress in user profile page.
 
 ## Screenshots
-![home page](./static/images/snapshots/home_achintya.PNG)
+![home page](./maxo_scl/static/images/snapshots/home_achintya.PNG)
 
 ## Technologies
 * Editor- Jupyter notebook
