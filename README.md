@@ -52,3 +52,6 @@ flask run
 * User profile.
 * Query Box.
 
+## Contact
+ achintyasushiksha@gmail.com
+
