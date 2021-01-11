@@ -23,7 +23,8 @@ User can view thier progress in user profile page.
 ![language page](./maxo_scl/static/images/snapshots/language_achintya.PNG "Language page")
 ![profile](./maxo_scl/static/images/snapshots/profile_achintya.PNG "User Profile")
 ![About us](./maxo_scl/static/images/snapshots/about_achintya.PNG "About")
-* [For more screenshots] (./maxo_scl/static/images/snapshots)
+* For more screenshots
+![click here] (./maxo_scl/static/images/snapshots)
 ## Technologies
 * Editor- Jupyter notebook
 * Programming language- Python
