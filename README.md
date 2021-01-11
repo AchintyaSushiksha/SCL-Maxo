@@ -50,4 +50,5 @@ flask run
 * Creating account/login.
 * Learning New Language, improving English, Art.
 * User profile.
+* Query Box.
 
