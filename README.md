@@ -40,6 +40,7 @@ Install flask and pymysql
 ```
 pip install flask
 pip install PyMySQL
+pip install GoogleNews
 ```
 Run code
 ```
