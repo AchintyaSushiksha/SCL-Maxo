@@ -18,7 +18,7 @@ It also includes a query box which helps student to clarify their doubt.
 User can view thier progress in user profile page.
 
 ## Screenshots
-![Example screenshot](./static/img/wel2.jpg)
+!(./static/images/snapshots/)
 
 ## Technologies
 * Editor- Jupyter notebook
