@@ -29,7 +29,7 @@ User can view thier progress in user profile page.
 * Programming language- Python
 * Framework-Flask
 * Module- Pymysql
-* Frontend-HTML,CSS
+* Frontend-HTML,CSS,Bootstrap
 
 ## Setup
 Change directory:
