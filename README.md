@@ -4,10 +4,7 @@ Digital Education Web App
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
-* [Technologies](#technologies)
 * [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
 * [Inspiration](#inspiration)
 * [Contact](#contact)
 
@@ -22,14 +19,6 @@ User can view thier progress in user profile page.
 ![main page](./maxo_scl/static/images/snapshots/mainpage_whatsapp.PNG "Main page")
 ![language page](./maxo_scl/static/images/snapshots/language_achintya.PNG "Language page")
 ![profile](./maxo_scl/static/images/snapshots/profile_achintya.PNG "User Profile")
-
-
-## Technologies
-* Editor- Jupyter notebook
-* Programming language- Python
-* Framework-Flask
-* Module- Pymysql
-* Frontend-HTML,CSS,Bootstrap
 
 ## Setup
 Change directory:
@@ -46,11 +35,6 @@ Run code
 ```
 flask run
 ```
-## Features
-* Creating account/login.
-* Learning New Language, improving English, Art.
-* User profile.
-* Query Box.
 
 ## Contact
  achintyasushiksha@gmail.com
