@@ -5,7 +5,6 @@ Digital Education Web App
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
-* [Inspiration](#inspiration)
 * [Contact](#contact)
 
 ## General info
@@ -18,7 +17,6 @@ User can view thier progress in user profile page.
 ![home page](./maxo_scl/static/images/snapshots/home_achintya.PNG "Home page")
 ![main page](./maxo_scl/static/images/snapshots/mainpage_whatsapp.PNG "Main page")
 ![language page](./maxo_scl/static/images/snapshots/language_achintya.PNG "Language page")
-![profile](./maxo_scl/static/images/snapshots/profile_achintya.PNG "User Profile")
 
 ## Setup
 Change directory:
