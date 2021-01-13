@@ -34,6 +34,10 @@ Run code
 flask run
 ```
 
+## usage
+Welcome to Digital Education Application
+After installing 
+
 ## Contact
  achintyasushiksha@gmail.com
 
