@@ -22,7 +22,7 @@ cd path
 ```
 Install flask and pymysql
 ```
-pip install flask
+pip install Flask
 pip install PyMySQL
 pip install GoogleNews
 ```
