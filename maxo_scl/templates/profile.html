@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <title> Profile </title>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+       
+<!------ Include the above in your HEAD tag ---------->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+$('.navbar-light .dmenu').hover(function () {
+        $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+    }, function () {
+        $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+    });
+});
+</script>
+
+
+</head>
+
+  <body>
+
+<style>
+body {
+     font-family: 'Montserrat', sans-serif;
+     background:url("static/images/other_whatsapp.jpeg");
+     background-size: cover;
+
+}
+
+.log{  width:1566px;
+          height:696px;
+position:absolute;
+left:30px;
+
+top:80px;
+          
+          }
+
+      .loginbox{  width: 420px;
+          height: 450px;
+          background: #0d5658;
+          color: #fff;
+          top:12%;
+          left:4%;
+          
+          position:absolute;
+          transform: translate{-50%,-50%}
+          box-sizing: border-box;
+          padding: 70px 30px;
+          opacity:.7;
+               }
+      .avatar{  width: 100px;
+          height: 100px;
+          border-radius:50%;
+          position:absolute;
+          top:-14%;
+          left:calc(50% - 50px);
+             }
+      h1{    margin:0;
+          padding: 0 0 20px;
+          text-align: center;
+          font-size: 30px;
+          font-family:AR JULIAN;
+          color:red;
+        }    
+      .loginbox p{  margin:0;
+          padding: 0;
+          font-weight:bold;
+                 }
+      .loginbox input{width: 100%;
+          margin-bottom:20px;
+                     }
+      .loginbox input[type="text"], input[type="password"]{
+          border: none;
+          border-bottom: 1px solid #fff;
+          background: transparent;
+          outline:none;
+          height:40px;
+          color:#fff;
+          font-size:16px;
+              }
+      .loginbox input[type="submit"]{
+          border: none;
+          outline:none;
+          height:40px;
+          background:#fb2525;
+          color: #fff;
+          font-size:18px;
+          border-radius:20px;
+              }
+      .loginbox input[type="submit"]:hover
+      {    cursor:pointer;
+          background:#ffc107;
+          color:#000;
+      }
+      .loginbox a{   
+          text-decoration:none;
+          font-size:12px;
+          line-height:20px;
+          color: darkgrey;
+      }
+      .loginbox a:hover
+      {  
+        color:#ffc107;
+      }
+</style>
+
+
+
+
+
+
+     <nav class="navbar navbar-expand-sm" style="background-color:yellow;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/mainpage">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item dropdown dmenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              <b>{{user}} </b>
+            </a>
+            <div class="dropdown-menu sm-menu">
+              <a class="dropdown-item" href="/profile">Edit Profile</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/query">Query</a>
+          </li>
+      
+        </div>
+      </nav>
+
+
+<!dv class="container">
+  
+        <div class="row">
+
+             <div class="loginbox" id="logindivision" style="visibility:hidden; z-index:1; position:absolute; left:450px; height:55%; widht:60%; margin-top:30px;" >
+
+    <form action="\profile1" method="post">
+     {% with issue=get_flashed_messages() %}
+    	{% if issue %} 
+        {% for i in issue %}
+
+         <h1 class="issue"> {{i}} </h1>
+	{% endfor %}
+        {% endif %}
+      {% endwith %}
+ 
+    
+    <p> Username</p>
+    <input type="text" name="loginusername1" placeholder="Enter Username">
+    <p> Email </p>
+    <input type="text" name="email1" placeholder="Enter email"><br>
+    <input type="submit" name="loginbutton" value="Update">
+    </form>
+
+    </div>
+   </div>
+  </div>
+
+
+            <div class="col-md-3" style="left:500px; top:50px; padding-top:30px;" id="profile1">
+
+              <p style="background-color:#3b5998; text-align:center; padding:5px; color:white; height:80px; width:250px; font-size:30px;"> Your Profile </p>
+
+                <!--ul class="nav nav-pills nav-stacked admin-menu" >
+                    <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+                </ul-->
+            </div>
+
+
+
+         <div class="col-md-9 admin-content" id="profile"  style="top:170px; left:0px; width:40%;">
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Name</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{name}}
+                    </div>
+                </div>
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Email</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{email}}
+                    </div>
+		</div>
+	
+           
+            
+     
+
+       </div>
+   </div>
+    <button type="button" id="update" onclick="myFunction()" style="background-color:#3b5998; color: white; width:120px; height:30px; padding-bottom:15px; position:absolute; left:610px; top:530px;"> Edit </button>
+
+<script>
+function myFunction() {
+var x=document.getElementById("logindivision");
+var z=document.getElementById("profile")
+var a=document.getElementById("profile1")
+
+ if (x.style.visibility=="hidden") {
+   
+   x.style.visibility="visible";
+   z.style.visibility="hidden";
+   var y=document.getElementById('update');
+   y.innerHTML="Cancel";
+   a.style.visibility="hidden"
+
+}
+
+ else {
+  var y=document.getElementById('update');
+  
+  x.style.visibility="hidden";
+  z.style.visibility="visible";
+  y.innerHTML="Edit";
+  a.style.visibility="visible"
+}
+}
+
+
+
+</script>
+
+
+
+ <!-- admin-content" id="profile"-->           
+
+</body>
+</html>
