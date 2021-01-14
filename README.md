@@ -8,10 +8,7 @@ Digital Education Web App
 * [Contact](#contact)
 
 ## General info
-Our Digital Education Web app is a app which provides resources to the students( of age group 13-16) in the fields like art, craft and to learn different languages. 
-Gives regular updates on the field the students interested in.
-It also includes a query box which helps student to clarify their doubt.
-User can view thier progress in user profile page.
+In the view of New Education Policy which aims at overall development of a student, our Digital Education Web app(Bodhak) provides resources to the students(of age group 13-16) in the fields like Languages and Art. The project aims at developing multilingual and artistic skills in the students. It also includes a query box which helps student to clarify their doubts.
 
 ## Screenshots
 ![home page](./maxo_scl/static/images/snapshots/home_achintya.PNG "Home page")
