@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Query Page </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+$('.navbar-light .dmenu').hover(function () {
+        $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+    }, function () {
+        $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+    });
+});
+</script>
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif; background-color:#90adc6; background:url("static/images/other_whatsapp.jpeg");
+     background-size: cover;}
+
+
+.container {
+  border-radius: 5px;
+  background-color: black;
+  height:90px;
+  z-index:1;
+  margin-top:30px;
+}
+
+.subject {
+ resize:none;
+ margin-top:30px;
+ width:600px;
+ height:500px;
+ position:absolute;
+ left:500px;
+ top:300px;
+ color:black;
+ background-color:yellow;
+ border: 5px solid black;
+ font-size:25px; 
+ }
+
+.subject:hover {
+background-color:white;
+color: black;}
+
+.button {
+background-color:black;
+color:yellow;
+position:absolute;
+left:720px;
+top:550px;
+padding-top:10px;
+padding-bottom:10px;
+width:120px;
+height:50px;
+}
+
+.button:hover {
+background-color:purple;
+color:white;
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm" style="background-color:yellow;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/mainpage">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item dropdown dmenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              <b>{{user}} </b>
+            </a>
+            <div class="dropdown-menu sm-menu">
+              <a class="dropdown-item" href="/profile">Edit Profile</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/query">Query</a>
+          </li>
+
+           <!-- <li class="nav-item dropdown dmenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu sm-menu">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+              <a class="dropdown-item" href="#">Link 4</a>
+              <a class="dropdown-item" href="#">Link 5</a>
+              <a class="dropdown-item" href="#">Link 6</a>
+            </div>
+          </li> -->
+          </ul>
+          <div class="social-part">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </div>
+      </nav>
+ 
+<div class="container">
+  <form action="/query" method="post">
+<label style="position:absolute; left:650px; font-size:40px; color:yellow;" for="subject">Your Query</label>
+    <textarea class="subject" id="subject" name="subject" placeholder="Enter your Query..." style="height:200px"></textarea>
+
+    <input class="button" type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+
