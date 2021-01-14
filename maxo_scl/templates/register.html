@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>  
-    <title> Register Form</title>
+    <title> Register Page</title>
     <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,19 +12,28 @@
        body{
           margin:0;
           padding:0;
-          background:url("static/images/bg.jpg");
+          background:url("static/images/login_whatsapp.jpeg");
           background-size: cover;
           font-family: sans-serif;
            }
-      .log{  width:1366px;
+
+            h1.issue{    margin:0;
+          padding: 0 0 20px;
+          text-align: center;
+          font-size: 25px;
+          font-family:AR JULIAN;
+          color:red;
+        }  
+
+      .log{  width:1566px;
           height:696px;
           
           }
       .loginbox{  width: 320px;
-          height: 395px;
+          height: 450px;
           background: #0d5658;
           color: #fff;
-          top:15%;
+          top:12%;
           left:36%;
           position:absolute;
           transform: translate{-50%,-50%}
@@ -44,7 +53,7 @@
           text-align: center;
           font-size: 30px;
           font-family:AR JULIAN;
-          color:red;
+          color:yellow;
         }    
       .loginbox p{  margin:0;
           padding: 0;
@@ -93,25 +102,42 @@
       }
        </style>
   </head>
-  <body>
+  <body> 
+   
+
     <img class="log">
     <div class="loginbox">
+      
+    <form action="\register" method="post">
+    {% with issue=get_flashed_messages() %}
+    	{% if issue %} 
+        {% for i in issue %}
+
+         <h1 class="issue"> {{i}} </h1>
+	{% endfor %}
+        {% endif %}
+      {% endwith %}
+
     <img src="static/images/avatar1.png" class="avatar">
+
+
     <h1>Register Here</h1>
     
-    <form>
+
     <p> Email</p>
     <input type="text" name="email" placeholder="Enter Email">
     <p> Username</p>
-    <input type="text" name="username" placeholder="Enter Username">
+    <input type="text" name="username" placeholder="Enter Email">
     <p> Password</p>
     <input type="password" name="password" placeholder="Enter Password"><br>
     <p> Confirm Password</p>
     <input type="password" name="cpassword" placeholder="Enter Password"><br>
     <input type="submit" name="submit" value="Register">
     <a href="/">Already have an acoount?Login</a>
+
     </form>
     </div>
+    
     <script src="js/jquery-2.1.4.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/ajax-utils.js"></script>
