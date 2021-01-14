@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>  
-    <title> LOGIN Form</title>
+    <title> Login Page</title>
     <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,20 +12,31 @@
        body{
           margin:0;
           padding:0;
-          background:url("static/images/bg.png");
+          background:url("static/images/login_whatsapp.jpeg");
 	  
           background-size: cover;
           font-family: sans-serif;
            }
-      .log{  width:1366px;
+
+       h1.issue{    margin:0;
+          left:0px;
+          width:100%;
+          padding: 0 0 20px;
+          text-align: center;
+          font-size: 25px;
+          font-family:AR JULIAN;
+          color:red;
+          }
+
+      .log{  width:1566px;
           height:696px;
           
           }
       .loginbox{  width: 320px;
-          height: 250px;
+          height: 350px;
           background: #0d5658;
           color: #fff;
-          top:20%;
+          top:13%;
           left:36%;
           position:absolute;
           transform: translate{-50%,-50%}
@@ -64,6 +75,7 @@
           font-size:16px;
               }
       .loginbox input[type="submit"]{
+         margin-top:15px;
           border: none;
           outline:none;
           height:40px;
@@ -92,27 +104,65 @@
         background:#e02626;
         border-radius:4px;
       }
+
+
+     .register_button{
+     position:absolute;
+     top:65%;
+     margin-top:20px;
+     width:80%;
+     height:4%;
+     color:black;
+     background-color:yellow;
+     padding-top:10px;
+     padding-left:10px;
+     padding-right:10px;
+     padding-bottom:10px;
+     border-radius:20px;
+     font-size:19px;
+     text-decoration:none;
+      text-align:center;
+     }
+    
+    .register_button:hover {
+
+     color:white;
+     background:#e02626;
+}
+   
        </style>
+
   </head>
   <body>
     <img class="log">
     <div class="loginbox">
-    <img src="static/images/avatar1.png" class="avatar">
-    <h1>Login Here</h1>
+    <form action="\login" method="post">
+        {% with issue=get_flashed_messages() %}
+    	{% if issue %} 
+        {% for i in issue %}
+
+         <h1 class="issue"> {{i}} </h1>
+	{% endfor %}
+        {% endif %}
+      {% endwith %}
+
+    <img src="static/images/avatar1.png" class="avatar">    
     
-    <form>
     <p> Username</p>
-    <input type="text" name="" placeholder="Enter Username">
+    <input type="text" name="loginusername" placeholder="Enter Username">
     <p> Password</p>
-    <input type="password" name="" placeholder="Enter Password"><br>
-    <input type="submit" name="" value="Login">
-    <a href="#">Forgot password?</a><br />
-    <a href="/register">Don't have an acoount?Register</a>
+    <input type="password" name="loginpassword" placeholder="Enter password"><br>
+    <input type="submit" name="loginbutton" value="Login">
     </form>
+    <a href="/register" style="text-decoration:none;"> <label class="register_button">  Register </label> </a>
+   
     </div>
     <script src="js/jquery-2.1.4.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/ajax-utils.js"></script>
       <script src="js/script.js"></script>
+
+
+
   </body>
 </html>
