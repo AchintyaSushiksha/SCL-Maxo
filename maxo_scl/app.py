@@ -388,8 +388,7 @@ def query():
     if 'subject' in request.form:
         subject = request.form['subject']
         print(subject)
-        user = 'keek'
-        email = "vishalkharvi461@gmail.com"
+        email = session['email']
         import requests
         import json
         url = "https://www.fast2sms.com/dev/bulk"
