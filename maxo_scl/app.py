@@ -404,7 +404,7 @@ def query():
         }
 
         headers = {
-            'authorization': "7mBhdzNnEW3OacvwLlyTS68HjtR0qp15FgCsAJDYukIfobUx4edDyBzEKHmojxwN9l8f7bcquhVSPT4a",
+            'authorization': "abcd",
             'Content-Type': "application/x-www-form-urlencoded",
             'Cache-Control': "no-cache",
         }
