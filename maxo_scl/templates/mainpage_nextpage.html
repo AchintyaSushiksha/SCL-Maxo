@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Categories</title>
 	<link rel="stylesheet" href="static/css/bootstrap.min.css">
 
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -13,7 +13,7 @@
 
 body {
      font-family: 'Montserrat', sans-serif;
-     background:url("static/images/back1.jpg");
+     background:url("static/images/other_whatsapp.jpeg");
      background-size: cover;
 
 }
@@ -147,8 +147,6 @@ $('.navbar-light .dmenu').hover(function () {
 
 
 
-
-
 <nav class="navbar navbar-expand-sm" style="background-color:yellow;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -164,16 +162,14 @@ $('.navbar-light .dmenu').hover(function () {
             </li>
             <li class="nav-item dropdown dmenu">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Account
+              <b>{{user}} </b>
             </a>
             <div class="dropdown-menu sm-menu">
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Total Score</a>
-              <a class="dropdown-item" href="#">keekkeek</a>
+              <a class="dropdown-item" href="/profile">Edit Profile</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
+            <a class="nav-link" href="/query">Query</a>
           </li>
 
            <!-- <li class="nav-item dropdown dmenu">
@@ -202,13 +198,13 @@ $('.navbar-light .dmenu').hover(function () {
 
 <div class="container" >
 
-   <div class="row" id="ads">
+   <div class="row"  id="ads">
     <!-- Category Card -->
 
  {% for i in columns_of_languages %}
  
 
-    <div class="col-md-4">
+    <div class="col-md-4" style="margin-left:50px; margin-right:50px;">
         <div class="card rounded">
             <div class="card-image">
                 <span class="card-notify-badge">LANGUAGE</span>

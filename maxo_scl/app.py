@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect, flash, session
 import pymysql
-
 app = Flask(__name__)
 app.secret_key = 'secret'
 
@@ -18,10 +17,9 @@ def login():
         if user == "" or password == "":
             flash("Fields shouldnt be left empty")
             return redirect(url_for('login'))
-
+        
         try:
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678",
-                                 autocommit=True)
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678", autocommit=True)
             cur = db.cursor()
 
             ab = "use achintya_maxo_scl"
@@ -40,12 +38,12 @@ def login():
                 if answer == password:
                     session['user'] = user
                     session['email'] = email
-
+                    
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
                     a = "show columns from December"
                     cur.execute(a)
-                    columns_tuple = cur.fetchall()
+                    columns_tuple=cur.fetchall()
                     columns_list = []
                     columns_of_languages = []
                     for i in columns_tuple:
@@ -55,26 +53,26 @@ def login():
 
                     language_start = columns_list.index('Languagelink')
                     language_end = columns_list.index('Improvelink')
-                    columns_of_languages = columns_list[language_start + 1:language_end]
+                    columns_of_languages = columns_list[language_start+1:language_end]
                     session['columns_of_languages'] = columns_of_languages
-
+                
                     improve_start = columns_list.index('Improvelink')
                     improve_stop = columns_list.index('Artlink')
-                    improve_columns = columns_list[improve_start + 1:improve_stop]
+                    improve_columns = columns_list[improve_start+1:improve_stop]
                     session['improve_columns'] = improve_columns
-
+                    
                     art_start = columns_list.index('Artlink')
                     art_stop = len(columns_list)
-                    art_columns = columns_list[art_start + 1:art_stop]
+                    art_columns = columns_list[art_start+1:art_stop]
                     session['art_columns'] = art_columns
-
+                    
                     db.close()
                     return render_template('mainpage.html', user=user)
                 else:
                     db.close()
                     flash("Invalid  Password!!!")
                     return redirect(url_for('login'))
-
+                
         except pymysql.err.OperationalError as e:
             print(e)
             flash("Please Check your Connection")
@@ -90,6 +88,7 @@ def login():
 
 @app.route('/register', methods=["post", "get"])
 def register():
+    
     if 'email' in request.form and 'username' in request.form and 'password' in request.form and 'cpassword' in request.form:
         email = request.form['email']
         username = request.form['username']
@@ -104,10 +103,9 @@ def register():
         if new_password != confirm_password:
             flash("Passwords didnt match!!!")
             return redirect(url_for('register'))  # Return to same page if password doesnt match.
-
+    
         try:
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678",
-                                 autocommit=True)
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678", autocommit=True)
             cur = db.cursor()
 
             ab = "use achintya_maxo_scl"
@@ -121,7 +119,7 @@ def register():
             db.close()
             flash(e)
             return redirect(url_for('register'))
-
+        
     return render_template('register.html')
 
 
@@ -131,20 +129,20 @@ def mainpage():
     if 'language' in request.form:
         print("inside")
         language = request.form['language']
-
+        
         print('inside1')
-
+        
         if language == "language":
             columns_of_languages = session['columns_of_languages']
             print('inside2')
             return render_template('mainpage_nextpage.html', columns_of_languages=columns_of_languages, user=user)
-
+                
         return redirect(url_for('mainpage'))
-
+    
     elif 'improve' in request.form:
         improve_columns = session['improve_columns']
         return render_template('mainpage_nextpage.html', columns_of_languages=improve_columns, user=user)
-
+            
     elif 'art' in request.form:
         art_columns = session['art_columns']
         return render_template('mainpage_nextpage.html', columns_of_languages=art_columns, user=user)
@@ -166,16 +164,15 @@ def nextpage():
     improve_link = session['improve_columns']
     art_link = session['art_columns']
     user = session['user']
-
-    #     global columns_of_languages
+    
+#     global columns_of_languages
     for i in columns_of_languages:
         if i in request.form:
             button_name = request.form[i]
             print(button_name)
             if button_name != "":
                 try:
-                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya",
-                                         password="12345678", autocommit=True)
+                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678", autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -188,12 +185,12 @@ def nextpage():
                             continue
                         else:
                             linklist.append(i[0])
-
+                    
                     top_property = []
                     first_value = 40
                     for i in range(0, len(linklist)):
                         top_property.append(first_value)
-                        first_value = first_value + 540
+                        first_value = first_value+540
                     link_with_topvalue = {}
                     print(linklist)
                     print(top_property)
@@ -204,10 +201,9 @@ def nextpage():
                     button_name_info = 'Learn' + button_name
                     googlenews.search(button_name_info)
                     news = googlenews.results()
-
-                    return render_template('language1.html', link_with_topvalue=link_with_topvalue,
-                                           button_name=button_name, news=news, leng=5, user=user)
-
+                    
+                    return render_template('language1.html', link_with_topvalue=link_with_topvalue, button_name=button_name, news=news, leng=5, user=user)
+                
                 except pymysql.err.OperationalError:
                     print('ntrwk error')
                     return redirect(url_for('nextpage', user=user))
@@ -216,15 +212,14 @@ def nextpage():
                     if db.open:
                         db.close()
                     return redirect(url_for('nextpage', user=user))
-
+                
     for i in improve_link:
         if i in request.form:
             button_name = request.form[i]
             print(button_name)
             if button_name != "":
                 try:
-                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya",
-                                         password="12345678", autocommit=True)
+                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678", autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -242,19 +237,18 @@ def nextpage():
                     first_value = 40
                     for i in range(0, len(linklist)):
                         top_property.append(first_value)
-                        first_value = first_value + 540
+                        first_value = first_value+540
                     link_with_topvalue = {}
                     print(linklist)
                     print(top_property)
                     for i in range(0, len(linklist)):
                         link_with_topvalue[linklist[i]] = top_property[i]
                     db.close()
-
+                    
                     button_name_info = 'improve english'
                     googlenews.search(button_name_info)
                     news = googlenews.results()
-                    return render_template('language1.html', link_with_topvalue=link_with_topvalue,
-                                           button_name=button_name, news=news, leng=5, user=user)
+                    return render_template('language1.html', link_with_topvalue=link_with_topvalue, button_name=button_name, news=news, leng=5, user=user)
 
                 except pymysql.err.OperationalError:
                     return redirect(url_for('nextpage'))
@@ -263,15 +257,14 @@ def nextpage():
                     if db.open:
                         db.close()
                     return redirect(url_for('nextpage'))
-
+                
     for i in art_link:
         if i in request.form:
             button_name = request.form[i]
             print(button_name)
             if button_name != "":
                 try:
-                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya",
-                                         password="12345678", autocommit=True)
+                    db = pymysql.connect(host="achintya.heliohost.us",user="achintya_achintya",password="12345678",autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -289,7 +282,7 @@ def nextpage():
                     first_value = 40
                     for i in range(0, len(linklist)):
                         top_property.append(first_value)
-                        first_value = first_value + 540
+                        first_value = first_value+540
                     link_with_topvalue = {}
                     print(linklist)
                     print(top_property)
@@ -299,11 +292,10 @@ def nextpage():
                     db.close()
                     if button_name == 'Drawing' or button_name == 'Drawings':
                         button_name = 'life drawing'
-                    button_name_info = 'Learn' + button_name
+                    button_name_info = 'Learn'+button_name
                     googlenews.search(button_name_info)
                     news = googlenews.results()
-                    return render_template('language1.html', link_with_topvalue=link_with_topvalue,
-                                           button_name=button_name, news=news, leng=5, user=user)
+                    return render_template('language1.html', link_with_topvalue=link_with_topvalue, button_name=button_name, news=news, leng=5, user=user)
 
                 except pymysql.err.OperationalError:
                     return redirect(url_for('nextpage'))
@@ -326,7 +318,7 @@ def language1():
 def profile():
     present_username = session['user']
     present_email = session['email']
-
+    
     return render_template('profile.html', name=present_username, email=present_email, user=present_username)
 
 
@@ -336,10 +328,9 @@ def profile1():
 
         changed_username = request.form['loginusername1']
         changed_email = request.form['email1']
-        #         if changed_username!='' or changed_email!='':
+#         if changed_username!='' or changed_email!='':
         try:
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678",
-                                 autocommit=True)
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345678", autocommit=True)
             cur = db.cursor()
             ab = "use achintya_maxo_scl"
             cur.execute(ab)
@@ -351,7 +342,7 @@ def profile1():
                 session.pop('email')
                 session['user'] = changed_username
                 session['email'] = changed_email
-
+                
             elif changed_email != "" and changed_username == "":
                 query = "update userdetails set User_Email=%s where User_name=%s"
                 cur.execute(query, (changed_email, present_user))
@@ -362,7 +353,7 @@ def profile1():
                 cur.execute(query, (changed_username, present_user))
                 session.pop('user')
                 session['user'] = changed_username
-
+                
             present_username = session['user']
             present_email = session['email']
 
@@ -376,7 +367,7 @@ def profile1():
             return render_template('profile.html', name=present_username, email=present_email, user=present_username)
 
         except Exception as e:
-            flash(e)
+            flash(e) 
             if db.open:
                 db.close()
             present_username = session['user']
@@ -387,7 +378,7 @@ def profile1():
     present_username = session['user']
     present_email = session['email']
     print(present_username, present_email)
-
+    
     return render_template('profile.html', name=present_username, email=present_email, user=present_username)
 
 
@@ -402,13 +393,14 @@ def query():
         import requests
         import json
         url = "https://www.fast2sms.com/dev/bulk"
+        
 
         my_data = {
-            'sender_id': 'FSTSMS',
-            'message': f' \n User: {user} \n Email:{email} \n Issue:{subject}',
-            'language': 'english',
-            'route': 'p',
-            'numbers': '7975995590'
+            'sender_id':'FSTSMS',
+            'message':f' \n User: {user} \n Email:{email} \n Issue:{subject}',
+            'language':'english',
+            'route':'p',
+            'numbers':'7975995590'  
         }
 
         headers = {
@@ -422,13 +414,13 @@ def query():
         returned_msg = json.loads(response.text)
 
         print(returned_msg['message'])
-
+        
         return render_template('mainpage.html', user=user)
 
     return render_template('query.html', user=user)
 
 
-@app.route('/logout')
+@app.route('/logout')    
 def logout():
     session.pop('columns_of_languages')
     session.pop('improve_columns')
@@ -436,7 +428,7 @@ def logout():
     session.pop('user')
     session.pop('email')
     return render_template('login.html')
-
-
+    
+    
 if __name__ == "__main__":
     app.run(host="localhost", port="5000")
