@@ -19,7 +19,7 @@ def login():
             return redirect(url_for('login'))
         
         try:
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345", autocommit=True)
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="888000++vVvV", autocommit=True)
             cur = db.cursor()
 
             ab = "use achintya_maxo_scl"
@@ -111,7 +111,7 @@ def register():
             return redirect(url_for('register'))  # Return to same page if password doesnt match.
     
         try:
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345", autocommit=True)
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="888000++vVvV", autocommit=True)
             cur = db.cursor()
 
             ab = "use achintya_maxo_scl"
@@ -141,17 +141,17 @@ def mainpage():
         if language == "language":
             columns_of_languages = session['columns_of_languages']
             print('inside2')
-            return render_template('mainpage_nextpage.html', columns_of_languages=columns_of_languages, user=user)
+            return render_template('mainpage_nextpage.html', columns_of_languages=columns_of_languages, user=user,j="download1")
                 
         return redirect(url_for('mainpage'))
     
     elif 'improve' in request.form:
         improve_columns = session['improve_columns']
-        return render_template('mainpage_nextpage.html', columns_of_languages=improve_columns, user=user)
+        return render_template('mainpage_nextpage.html', columns_of_languages=improve_columns, user=user,j="research")
             
     elif 'art' in request.form:
         art_columns = session['art_columns']
-        return render_template('mainpage_nextpage.html', columns_of_languages=art_columns, user=user)
+        return render_template('mainpage_nextpage.html', columns_of_languages=art_columns, user=user,j="bg")
 
     return render_template('mainpage.html', user=user)
 
@@ -180,7 +180,7 @@ def nextpage():
             print(button_name)
             if button_name != "":
                 try:
-                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345", autocommit=True)
+                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="888000++vVvV", autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -228,7 +228,7 @@ def nextpage():
             print(button_name)
             if button_name != "":
                 try:
-                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345", autocommit=True)
+                    db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="888000++vVvV", autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -278,7 +278,7 @@ def nextpage():
             print(button_name)
             if button_name != "":
                 try:
-                    db = pymysql.connect(host="achintya.heliohost.us",user="achintya_achintya",password="12345",autocommit=True)
+                    db = pymysql.connect(host="achintya.heliohost.us",user="achintya_achintya",password="888000++vVvV",autocommit=True)
                     cur = db.cursor()
                     ab = "use achintya_maxo_scl"
                     cur.execute(ab)
@@ -322,7 +322,7 @@ def nextpage():
         
     else:
         try:
-            db = pymysql.connect(host="achintya.heliohost.us",user="achintya_achintya",password="12345",autocommit=True)
+            db = pymysql.connect(host="achintya.heliohost.us",user="achintya_achintya",password="888000++vVvV",autocommit=True)
             cur = db.cursor()
             ab = "use achintya_maxo_scl"
             cur.execute(ab)
@@ -352,7 +352,8 @@ def nextpage():
             button_name_info ='Paintings'
             googlenews.search(button_name_info)
             news = googlenews.results()
-            return render_template('language1.html', link_with_topvalue=link_with_topvalue, button_name="Paintings", news=news, leng=5, user=user)
+            j='bg.png'
+            return render_template('language1.html', link_with_topvalue=link_with_topvalue, button_name="Paintings", news=news, leng=5, user=user,j=j)
 
         except pymysql.err.OperationalError:
             return redirect(url_for('nextpage'))
@@ -387,7 +388,7 @@ def profile1():
         changed_email = request.form['email1']
 #         if changed_username!='' or changed_email!='':
         try:
-            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="12345", autocommit=True)
+            db = pymysql.connect(host="achintya.heliohost.us", user="achintya_achintya", password="888000++vVvV", autocommit=True)
             cur = db.cursor()
             ab = "use achintya_maxo_scl"
             cur.execute(ab)
@@ -488,3 +489,4 @@ def logout():
     
 if __name__ == "__main__":
     app.run(host="localhost", port="5000")
+
