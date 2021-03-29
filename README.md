@@ -1,5 +1,5 @@
 # SCL-Maxo
-Digital Education Web App
+BODHAK - Digital Education Web App
 
 ## Table of contents
 * [General info](#general-info)
